@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Israel Sotomayor
+  description: Rancher Agent
+  company: moltin
+  license: MIT
+  min_ansible_version: 2.1.1
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  categories:
+  - rancher
+  - agent
+dependencies:
+  - { role: "zot24.docker" }

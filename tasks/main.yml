@@ -1,0 +1,6 @@
+---
+- name: copy rancher agent script
+  copy: src=../bin/rancher-agent dest=/tmp/rancher-agent owner=moltin group=moltin mode=0544
+
+- name: register rancher agent
+  shell: "CATTLE_ACCESS_KEY={{cattle_access_key}} CATTLE_SECRET_KEY={{cattle_secret_key}} CATTLE_HOST_LABELS='{{cattle_host_labels}}' RANCHER_ENVIRONMENT_NAME={{rancher_environment_name}} /tmp/rancher-agent"

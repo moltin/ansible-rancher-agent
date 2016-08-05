@@ -1,0 +1,9 @@
+---
+  cattle_access_key: ""
+  cattle_secret_key: ""
+  cattle_host_labels: ""
+
+  rancher_fqdn: ""
+  rancher_environment_name: ""
+
+  docker_version: "1.10.3"
