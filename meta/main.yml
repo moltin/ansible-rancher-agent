@@ -12,5 +12,3 @@ galaxy_info:
   categories:
   - rancher
   - agent
-dependencies:
-  - { role: "zot24.docker" }
