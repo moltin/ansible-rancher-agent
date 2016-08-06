@@ -3,7 +3,7 @@
 docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged -i --rm docker:{{docker_version}} ash << EOF
     apk --no-cache add jq curl
 
-    ACCOUNT_ID=\`curl -u "{{cattle_access_key}}:{{cattle_secret_key}}" -sL "https://{{rancher_fqdn}}/v1/accounts?name="{{rancher_environment_name}} | jq -r .data[].id\`
+    ACCOUNT_ID=\`curl -u "{{cattle_access_key}}:{{cattle_secret_key}}" -sL "https://{{rancher_fqdn}}/v1/accounts?name={{rancher_environment_name}}" | jq -r .data[].id\`
     curl -u "{{cattle_access_key}}:{{cattle_secret_key}}" -sL -X POST "https://{{rancher_fqdn}}/v1/registrationtokens?projectId="\$ACCOUNT_ID
     sleep 0.9
     COMMAND=\`curl -u "{{cattle_access_key}}:{{cattle_secret_key}}" -sL "https://{{rancher_fqdn}}/v1/registrationtokens?accountId="\$ACCOUNT_ID | jq .data[0].command\`
