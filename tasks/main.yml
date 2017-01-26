@@ -1,6 +1,6 @@
 ---
 - name: copy rancher agent script template
-  template: src=templates/rancher-agent.sh.j2 dest=/tmp/rancher-agent.sh owner=moltin group=moltin mode=0544
+  template: src=templates/rancher-agent.sh.j2 dest=/tmp/rancher-agent.sh owner={{ owner }} group={{ group }} mode=0544
 
 - name: register rancher agent
   shell: "/tmp/rancher-agent.sh"
