@@ -6,4 +6,4 @@
   rancher_fqdn: ""
   rancher_environment_name: ""
 
-  docker_version: "1.10.3"
+  docker_version: "1.12.3"
